@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickBait</title>
+    <title>Gamified Nonsense</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1> ClickBait</h1>
+    <h1>🎮 Gamified Nonsense</h1>
     <p>The useless achievement generator.</p>
 </header>
 
 <div class="container">
 
+    <!-- Player Card -->
     <section class="card profile">
+
         <h2>Player</h2>
 
         <div class="level">
-            <span>Level <span id="level">1</span></span>
+            Level <span id="level">1</span>
         </div>
 
         <div class="xp-bar">
             <div class="xp-fill" id="xp-fill"></div>
         </div>
 
-        <p><span id="xp">0</span> / <span id="next-level">100</span> XP</p>
+        <p>
+            <span id="xp">0</span> /
+            <span id="next-level">100</span> XP
+        </p>
+
     </section>
 
+    <!-- Statistics -->
     <section class="card stats">
 
         <h2>Statistics</h2>
@@ -51,36 +58,29 @@
 
         <div class="stat">
             <span>⏱ Time Played</span>
-            <span id="time">0s</span>
+            <span id="time">0m 0s</span>
         </div>
 
     </section>
 
+    <!-- Achievements -->
     <section class="card achievements">
 
         <h2>Achievements</h2>
 
         <ul id="achievement-list">
 
-            <li class="locked">
-                🏆 The Hesitator
-            </li>
+            <li class="locked">🏆 The Hesitator</li>
 
-            <li class="locked">
-                📜 Marathon Scroller
-            </li>
+            <li class="locked">🖱 Click Addict</li>
 
-            <li class="locked">
-                ⌨ Keyboard Warrior
-            </li>
+            <li class="locked">⌨ Keyboard Warrior</li>
 
-            <li class="locked">
-                🖱 Click Addict
-            </li>
+            <li class="locked">📜 Marathon Scroller</li>
 
-            <li class="locked">
-                👀 Secret Achievement
-            </li>
+            <li class="locked">⏱ Loyal Visitor</li>
+
+            <li class="locked">⭐ Level Up!</li>
 
         </ul>
 
@@ -88,14 +88,24 @@
 
 </div>
 
+<!-- Hidden Hover Link -->
+<div style="text-align:center; margin-top:40px;">
+
+    <a href="#" id="dummy-link">
+        Hover over me... if you dare.
+    </a>
+
+</div>
+
+<!-- Achievement Popup -->
 <div id="toast" class="toast">
 
     <h3>🏆 Achievement Unlocked!</h3>
 
-    <h2 id="toast-title">The Hesitator</h2>
+    <h2 id="toast-title">Achievement</h2>
 
     <p id="toast-description">
-        Hovered over a link for 45 seconds.
+        Description
     </p>
 
 </div>
