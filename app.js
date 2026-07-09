@@ -30,6 +30,28 @@ window.addEventListener("load", () => {
 
     Achievements.buildList();
 
+    // Restore unlocked achievements
+
+    Game.unlocked.forEach(id => {
+
+        const achievement =
+            Achievements.list.find(a => a.id === id);
+
+        if (!achievement)
+            return;
+
+        const item =
+            document.getElementById("achievement-" + id);
+
+        if (!item)
+            return;
+
+        item.classList.remove("locked");
+        item.classList.add("unlocked");
+        item.innerHTML = "🏆 " + achievement.name;
+
+    });
+
     Stats.start();
 
     XP.updateUI();
