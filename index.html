@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Useless Achievement Generator</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: white; text-align: center; padding: 50px; }
+        .toast { position: fixed; bottom: 20px; right: 20px; background: #333; border: 2px solid gold; padding: 15px; border-radius: 8px; display: none; }
+    </style>
+</head>
+<body>
+    <h1>Gamified Nonsense</h1>
+    <p>Keep this tab open, browse around, or just hang out here...</p>
+    <a href="#" id="dummy-link">Hover over me... if you dare.</a>
+
+    <div id="achievement-toast" class="toast"></div>
+
+    <script>
+        // Track "The Hesitator"
+        let hoverTimer;
+        const link = document.getElementById('dummy-link');
+        
+        link.addEventListener('mouseenter', () => {
+            hoverTimer = setTimeout(() => {
+                triggerAchievement("🏆 Awarded: 'The Hesitator' — Hovered over a single link for 45 seconds.");
+            }, 45000); // 45 seconds
+        });
+
+        link.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
+
+        function triggerAchievement(message) {
+            const toast = document.getElementById('achievement-toast');
+            toast.innerText = message;
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 5000);
+        }
+    </script>
+</body>
+</html>
