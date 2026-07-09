@@ -56,4 +56,14 @@ window.addEventListener("load", () => {
 
     XP.updateUI();
 
+document
+.getElementById("reset-progress")
+.addEventListener("click",()=>{
+
+    if(confirm("Delete ALL progress?")){
+
+        Storage.clear();
+
+    }
+
 });
