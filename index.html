@@ -2,38 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Useless Achievement Generator</title>
-    <style>
-        body { font-family: sans-serif; background: #121212; color: white; text-align: center; padding: 50px; }
-        .toast { position: fixed; bottom: 20px; right: 20px; background: #333; border: 2px solid gold; padding: 15px; border-radius: 8px; display: none; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickBait</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Gamified Nonsense</h1>
-    <p>Keep this tab open, browse around, or just hang out here...</p>
-    <a href="#" id="dummy-link">Hover over me... if you dare.</a>
 
-    <div id="achievement-toast" class="toast"></div>
+<header>
+    <h1> ClickBait</h1>
+    <p>The useless achievement generator.</p>
+</header>
 
-    <script>
-        // Track "The Hesitator"
-        let hoverTimer;
-        const link = document.getElementById('dummy-link');
-        
-        link.addEventListener('mouseenter', () => {
-            hoverTimer = setTimeout(() => {
-                triggerAchievement("🏆 Awarded: 'The Hesitator' — Hovered over a single link for 45 seconds.");
-            }, 45000); // 45 seconds
-        });
+<div class="container">
 
-        link.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
+    <section class="card profile">
+        <h2>Player</h2>
 
-        function triggerAchievement(message) {
-            const toast = document.getElementById('achievement-toast');
-            toast.innerText = message;
-            toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 5000);
-        }
-    </script>
+        <div class="level">
+            <span>Level <span id="level">1</span></span>
+        </div>
+
+        <div class="xp-bar">
+            <div class="xp-fill" id="xp-fill"></div>
+        </div>
+
+        <p><span id="xp">0</span> / <span id="next-level">100</span> XP</p>
+    </section>
+
+    <section class="card stats">
+
+        <h2>Statistics</h2>
+
+        <div class="stat">
+            <span>🖱 Clicks</span>
+            <span id="clicks">0</span>
+        </div>
+
+        <div class="stat">
+            <span>⌨ Keys Pressed</span>
+            <span id="keys">0</span>
+        </div>
+
+        <div class="stat">
+            <span>📜 Scroll Distance</span>
+            <span id="scroll">0 px</span>
+        </div>
+
+        <div class="stat">
+            <span>⏱ Time Played</span>
+            <span id="time">0s</span>
+        </div>
+
+    </section>
+
+    <section class="card achievements">
+
+        <h2>Achievements</h2>
+
+        <ul id="achievement-list">
+
+            <li class="locked">
+                🏆 The Hesitator
+            </li>
+
+            <li class="locked">
+                📜 Marathon Scroller
+            </li>
+
+            <li class="locked">
+                ⌨ Keyboard Warrior
+            </li>
+
+            <li class="locked">
+                🖱 Click Addict
+            </li>
+
+            <li class="locked">
+                👀 Secret Achievement
+            </li>
+
+        </ul>
+
+    </section>
+
+</div>
+
+<div id="toast" class="toast">
+
+    <h3>🏆 Achievement Unlocked!</h3>
+
+    <h2 id="toast-title">The Hesitator</h2>
+
+    <p id="toast-description">
+        Hovered over a link for 45 seconds.
+    </p>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
